@@ -25,7 +25,7 @@ const { isEnd, isLastVideo, startPlay, videoId, isPlaying} = video;
 
 useGSAP(() => {
     gsap.to('#slider',{
-        transform: `translateX(${-100 * videoId})%}`,
+        transform: `translateX(${-100 * videoId})%`,
         duration: 2,
         ease: 'power2.inOut'
     })
@@ -158,6 +158,10 @@ const handleProcess = (type, i) => {
                               playsInline={true}
                               preload='auto'
                               muted
+                              classname={`${
+                                list.id === 2 && 'translate-x-44'}
+                                pointer-events-none
+                              `}
                               ref={(el) => (videoRef.current[i] = el) }
                               onEnded={() => 
                                 i !== 3
