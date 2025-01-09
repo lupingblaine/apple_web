@@ -90,7 +90,7 @@ const [largeRotation, setLargeRotation] = useState(0);
 
                     <button className="size-btn-container">
                         {sizes.map(({ label, value }) => (
-                            <span key={label} className="size-btn" style={{ backgroundColor: size === value ? 'white' : 'transparent', color: size === value ? 'black' : 'white'}} onclick={() => setSize(value)}>
+                          <span key={label} className="size-btn" style={{ backgroundColor: size === value ? 'white' : 'transparent', color: size === value ? 'black' : 'white'}} onClick={() => setSize(value)}>
                                 {label}
                             </span>
                         ))}
