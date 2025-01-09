@@ -8,7 +8,7 @@ import { yellowImg } from "../utils";
 import * as THREE from 'three';
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
-import { models } from "../constants";
+import { models, sizes } from "../constants";
 
 const Model = () => {
     const [size, setSize] = useState('small');
@@ -84,9 +84,17 @@ const [largeRotation, setLargeRotation] = useState(0);
                 <div className="flex-center">
                     <ul className="color-container">
                         {models.map((item, i) => (
-                            <li key={i} className="w-6 h-6 rounded-full mx-2" style={{backgroundColor: item.color[0]}} onClick={() => setModel(item)} />
+                            <li key={i} className="w-6 h-6 rounded-full mx-2 cursor-pointer" style={{backgroundColor: item.color[0]}} onClick={() => setModel(item)} />
                         ))}
                     </ul>
+
+                    <button className="size-btn-container">
+                        {sizes.map(({ label, value }) => (
+                            <span key={label}>
+                                {label}
+                            </span>
+                        ))}
+                    </button>
                 </div>
             </div>
           </div>
