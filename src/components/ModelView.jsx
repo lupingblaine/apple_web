@@ -1,6 +1,7 @@
 import { PerspectiveCamera, View } from "@react-three/drei"
 
 import Lights from "./Lights";
+import { Suspense } from "react";
 
 const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationSize, size, item}) => {
   return (
