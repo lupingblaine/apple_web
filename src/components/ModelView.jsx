@@ -1,6 +1,14 @@
-const ModelView = () => {
+import { View } from "@react-three/drei"
+
+const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationSize, size, item}) => {
   return (
-    <div>ModelView</div>
+    <View 
+      index={index}
+      id={gsapType}
+      className="border-2 border-red-500"
+      >
+
+      </View>
   )
 }
 
