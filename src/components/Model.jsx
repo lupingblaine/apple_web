@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react/react-in-jsx-scope */
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import ModelView from "./ModelView";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { yellowImg } from "../utils";
 
 
@@ -9,6 +11,7 @@ import * as THREE from 'three';
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
 import { models, sizes } from "../constants";
+import _gsap from "gsap/gsap-core";
 
 const Model = () => {
     const [size, setSize] = useState('small');
@@ -30,6 +33,16 @@ const large = useRef(new THREE.Group());
 const [smallRotation, setSmallRotation] = useState(0);
 const [largeRotation, setLargeRotation] = useState(0);
 
+const tl = gsap.timeline();
+
+useEffect(() => {
+  if(size === 'large') {
+
+  }
+  if(size === 'small') {
+    
+  }
+}, [size])
 
     useGSAP(() => {
         gsap.to('#heading', { y: 0, opacity: 1 })

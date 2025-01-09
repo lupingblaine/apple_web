@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/react-in-jsx-scope */
 import { Html, PerspectiveCamera, OrbitControls, View } from "@react-three/drei"
