@@ -3,11 +3,23 @@ import React from 'react'
 import { animateWithGsap } from '../utils/animations';
 import { explore1Img, explore2Img, exploreVideo } from '../utils';
 import { useRef } from 'react';
+import gsap from 'gsap';
 
 const Features = () => {
 const videoRef = useRef();
 
-    useGSAP(() => {
+  useGSAP(() => {
+    gsap.to('#exploreVideo', {
+      scrollTrigger: {
+        trigger: '#exploreVideo',
+        toggleActions: 'play pause reverse restart',
+        start: '-10% bottom',
+      },
+      onComplete: () => {
+        videoRef.current.play();
+      }
+    })
+
         animateWithGsap('#feactures_title', { y: 0, opacity:1})
         animateWithGsap(
             '.g_grow',
@@ -56,6 +68,16 @@ const videoRef = useRef();
                                         the first iPhone to feature an aerospace-grade titanium design
                                     </span>,
                                     using the same alloy that spacecraft use for missing to Mars.
+                                </p>
+                            </div>
+
+                            <div className="flex-1 flex-center">
+                                <p className="feature-text g_text">
+                                    Titanium has one of the best strength-to-weight ratios of any metal, making these our  {' '}
+                                    <span className="text-white">
+                                        lightest Pro models ever
+                                    </span>,
+                                    You'll notice the difference the moment you pick one up.
                                 </p>
                             </div>
                         </div>
