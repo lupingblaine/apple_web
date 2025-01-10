@@ -3,6 +3,7 @@ import { chipImg, frameImg, frameVideo } from '../utils'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { useRef } from 'react'
+import { animateWithGsap } from '../utils/animations'
 
 const HowItWorks = () => {
     const videoRef = useRef();
@@ -15,6 +16,13 @@ const HowItWorks = () => {
             opacity: 0,
             scale: 2,
             duration: 2,
+            ease: 'power2.inOut'
+        })
+
+        animateWithGsap('.g_fadeIn', {
+            opacity: 1,
+            y: 0,
+            duration: 1,
             ease: 'power2.inOut'
         })
     },[]);
@@ -49,7 +57,7 @@ const HowItWorks = () => {
                 </div>
 
                 <p className="text-gray font-semibold text-center mt-3">Honkai: Star Rail</p>
-
+                </div>
                 <div className="hiw-text-container">
                             <div className="flex flex-1 justify-center flex-col">
                                 <p className="hiw-text g_fadeIn">
@@ -58,7 +66,6 @@ const HowItWorks = () => {
                                         best grapic performance by far
                                     </span>.
                                 </p>
-                            </div>
 
                                 <p className="hiw-text g_fadeIn">
                                     Mobile  {' '}
