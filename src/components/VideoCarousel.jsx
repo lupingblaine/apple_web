@@ -7,6 +7,11 @@ import { useEffect, useRef, useState } from "react";
 import { hightlightsSlides } from "../constants";
 import { pauseImg, playImg, replayImg } from "../utils";
 
+/**
+ * VideoCarousel
+ * 
+ * @returns  
+ */
 const VideoCarousel = () => {
   const videoRef = useRef([]);
   const videoSpanRef = useRef([]);
@@ -68,8 +73,8 @@ const VideoCarousel = () => {
                 window.innerWidth < 760
                   ? "10vw" // mobile
                   : window.innerWidth < 1200
-                  ? "10vw" // tablet
-                  : "4vw", // laptop
+                    ? "10vw" // tablet
+                    : "4vw", // laptop
             });
 
             // set the background color of the progress bar
@@ -101,7 +106,7 @@ const VideoCarousel = () => {
       const animUpdate = () => {
         anim.progress(
           videoRef.current[videoId].currentTime /
-            hightlightsSlides[videoId].videoDuration
+          hightlightsSlides[videoId].videoDuration
         );
       };
 
@@ -165,9 +170,8 @@ const VideoCarousel = () => {
                 <video
                   id="video"
                   playsInline={true}
-                  className={`${
-                    list.id === 2 && "translate-x-44"
-                  } pointer-events-none`}
+                  className={`${list.id === 2 && "translate-x-44"
+                    } pointer-events-none`}
                   preload="auto"
                   muted
                   ref={(el) => (videoRef.current[i] = el)}
@@ -221,8 +225,8 @@ const VideoCarousel = () => {
               isLastVideo
                 ? () => handleProcess("video-reset")
                 : !isPlaying
-                ? () => handleProcess("play")
-                : () => handleProcess("pause")
+                  ? () => handleProcess("play")
+                  : () => handleProcess("pause")
             }
           />
         </button>
